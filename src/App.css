@@ -29,6 +29,9 @@
   border: solid 1px grey;
   padding: .8em;
   margin-inline: .4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .avail-selector {
@@ -38,7 +41,11 @@
   border-radius: 3.2em;
   height: 2em;
   margin-left: 0;
-  /* width: 4em; */
+  width: 8em;
   text-align: center;
   border: none;
+}
+
+.fa-trash {
+  color: rgb(250, 66, 66);
 }

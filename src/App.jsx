@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { getXataClient } from "./xata";
 import "./App.css";
+import AssetList from "./components/AssetList";
 
 const xata = getXataClient();
 
-const records = await xata.db.Assets.getAll();
+// const records = await xata.db.Assets.getAll();
 function App() {
   const [assets, setAssets] = useState([]);
   useEffect(() => {
@@ -13,34 +14,23 @@ function App() {
       setAssets(data);
     })();
   }, []);
+  const assetsIn = assets.filter((asset) => asset.status === "in");
+  const assetsOut = assets.filter((asset) => asset.status === "out");
+  const assetsWatch = assets.filter((asset) => asset.status === "watching");
   return (
     <div className="index">
       <nav className="header">Hello Three</nav>
       <div className="board">
         <span>
           {/* <h3>In</h3> */}
-          <div className="assets">
-            {records.map((asset) => (
-              <p className="asset-card" key={asset.id}>
-                <span>{asset.name}</span>
-                <select name="availability" id="" className="avail-selector">
-                  <option value={asset}>fit</option>
-                  {assets.map(
-                    (asset) =>
-                      asset.availability && (
-                        <option value={asset.id} key={asset.id}>
-                          {asset.availability}
-                        </option>
-                      )
-                  )}
-                </select>
-              </p>
-            ))}
-          </div>
+          <AssetList assets={assetsIn} />
         </span>
-
-        <div className="assets"></div>
-        <div className="assets"></div>
+        <span>
+          <AssetList assets={assetsOut} />
+        </span>
+        <span>
+          <AssetList assets={assetsWatch} />
+        </span>
       </div>
       <footer>and some bottom stuff</footer>
     </div>

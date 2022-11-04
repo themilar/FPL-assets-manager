@@ -11,6 +11,8 @@ function AddAssetForm({ status, show, onFormClick, updateAssets }) {
     e.preventDefault();
     updateAssets({ name, availability, status });
     xata.db.Assets.create({ name, availability, status });
+    setName("");
+    setAvail("");
     onFormClick();
   };
   return (

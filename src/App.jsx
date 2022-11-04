@@ -34,7 +34,7 @@ function App() {
             assets={assetsIn}
             allAssets={assets}
             status="In"
-            createAsset={setAssets}
+            updateAsset={setAssets}
           />
         </span>
         <span>
@@ -43,7 +43,7 @@ function App() {
             assets={assetsWatch}
             allAssets={assets}
             status="Watch"
-            createAsset={setAssets}
+            updateAsset={setAssets}
           />
         </span>
         <span>
@@ -52,7 +52,7 @@ function App() {
             assets={assetsOut}
             allAssets={assets}
             status="Out"
-            createAsset={setAssets}
+            updateAsset={setAssets}
           />
         </span>
       </div>

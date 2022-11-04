@@ -3,7 +3,7 @@ import { getXataClient } from "./xata";
 import "./App.css";
 import AssetList from "./components/AssetList";
 
-const xata = getXataClient();
+export const xata = getXataClient();
 
 // const records = await xata.db.Assets.getAll();
 function App() {
@@ -22,14 +22,16 @@ function App() {
       <nav className="header">Hello Three</nav>
       <div className="board">
         <span>
-          {/* <h3>In</h3> */}
-          <AssetList assets={assetsIn} />
+          <h3>In</h3>
+          <AssetList assets={assetsIn} status="In" />
         </span>
         <span>
-          <AssetList assets={assetsOut} />
+          <h3>Watching</h3>
+          <AssetList assets={assetsWatch} status="Out" />
         </span>
         <span>
-          <AssetList assets={assetsWatch} />
+          <h3>Out</h3>
+          <AssetList assets={assetsOut} status="Watch" />
         </span>
       </div>
       <footer>and some bottom stuff</footer>

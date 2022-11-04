@@ -49,3 +49,13 @@
 .fa-trash {
   color: rgb(250, 66, 66);
 }
+
+.hide {
+  display: none;
+}
+
+.add-asset-form {
+  display: flex;
+  flex-direction: column;
+
+}

@@ -12,9 +12,9 @@ export default function AssetList({ assets, status, updateAsset, allAssets }) {
   const handleClick = () => {
     setShowForm(!showForm);
   };
-  const deleteAsset = (assetID) => {
+  const deleteAsset = (assetName, assetID) => {
     xata.db.Assets.delete(assetID);
-    updateAsset(allAssets.filter((asset) => asset.id !== assetID));
+    updateAsset(allAssets.filter((asset) => asset.name !== assetName));
   };
   return (
     <div className="assets">

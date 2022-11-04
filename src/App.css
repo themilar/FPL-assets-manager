@@ -46,6 +46,14 @@
   border: none;
 }
 
+.suspended {
+  background-color: rgb(156, 86, 226);
+}
+
+.injured {
+  background-color: rgb(158, 158, 8);
+}
+
 .fa-trash {
   color: rgb(250, 66, 66);
 }

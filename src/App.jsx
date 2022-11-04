@@ -5,7 +5,8 @@ import AssetList from "./components/AssetList";
 
 export const xata = getXataClient();
 
-// const records = await xata.db.Assets.getAll();
+const records = await xata.db.Assets.getAll();
+console.log(records);
 function App() {
   const [assets, setAssets] = useState([]);
   useEffect(() => {
@@ -14,24 +15,45 @@ function App() {
       setAssets(data);
     })();
   }, []);
-  const assetsIn = assets.filter((asset) => asset.status === "in");
-  const assetsOut = assets.filter((asset) => asset.status === "out");
-  const assetsWatch = assets.filter((asset) => asset.status === "watching");
+  const assetsIn = assets.filter(
+    (asset) => asset.status.toLowerCase() === "in"
+  );
+  const assetsOut = assets.filter(
+    (asset) => asset.status.toLowerCase() === "out"
+  );
+  const assetsWatch = assets.filter(
+    (asset) => asset.status.toLowerCase() === "watch"
+  );
   return (
     <div className="index">
       <nav className="header">Hello Three</nav>
       <div className="board">
         <span>
           <h3>In</h3>
-          <AssetList assets={assetsIn} status="In" />
+          <AssetList
+            assets={assetsIn}
+            allAssets={assets}
+            status="In"
+            createAsset={setAssets}
+          />
         </span>
         <span>
           <h3>Watching</h3>
-          <AssetList assets={assetsWatch} status="Out" />
+          <AssetList
+            assets={assetsWatch}
+            allAssets={assets}
+            status="Watch"
+            createAsset={setAssets}
+          />
         </span>
         <span>
           <h3>Out</h3>
-          <AssetList assets={assetsOut} status="Watch" />
+          <AssetList
+            assets={assetsOut}
+            allAssets={assets}
+            status="Out"
+            createAsset={setAssets}
+          />
         </span>
       </div>
       <footer>and some bottom stuff</footer>

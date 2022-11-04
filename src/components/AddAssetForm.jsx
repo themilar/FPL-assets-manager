@@ -2,13 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { xata } from "../App";
 
-function AddAssetForm({ status, show, onFormClick }) {
+function AddAssetForm({ status, show, onFormClick, updateAssets }) {
   const [name, setName] = useState("");
   //   const [status, setStatus] = useState(status);
   const [availability, setAvail] = useState("");
   const handleChange = (e) => setName(e.target.value);
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
+    updateAssets({ name, availability, status });
     xata.db.Assets.create({ name, availability, status });
     onFormClick();
   };

@@ -1,0 +1,7 @@
+{
+  "databaseURL": "https://DAMILARE-s-workspace-uaav04.us-east-1.xata.sh/db/hackathon",
+  "codegen": {
+    "output": "src/xata.js",
+    "moduleType": "esm"
+  }
+}

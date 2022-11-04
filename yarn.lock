@@ -329,6 +329,11 @@
     magic-string "^0.26.7"
     react-refresh "^0.14.0"
 
+"@xata.io/client@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@xata.io/client/-/client-0.20.0.tgz#db18a25df14ce4f6fba962c7fafb44116d5ccb74"
+  integrity sha512-yzpsPh0EjLpuRqvsUcGl1ZB7G7tjrGg3j5G9ffTCKKplWxy1E/iFjagWbMpa+1j9T8CT/epBHoS9Q2ZyymkTkw==
+
 ansi-styles@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-3.2.1.tgz#41fbb20243e50b12be0f04b8dedbf07520ce841d"

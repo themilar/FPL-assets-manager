@@ -28,8 +28,8 @@ const tables = [
     name: "Assets",
     columns: [
       { name: "name", type: "string", unique: true },
-      { name: "availability", type: "multiple" },
-      { name: "status", type: "multiple" },
+      { name: "status", type: "string", notNull: true, defaultValue: "in" },
+      { name: "availability", type: "string" },
     ],
   },
 ];

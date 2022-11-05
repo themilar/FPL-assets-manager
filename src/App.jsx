@@ -18,11 +18,13 @@ function App() {
     setSelectedCard(currentCardName);
   };
   const moveCard = (newStatus) => {
+    const { id } = selectedCard;
     if (selectedCard) {
-      setAssets((prevState) => [
-        ...prevState.filter((asset) => asset.name !== selectedCard.name),
-        { ...selectedCard, status: newStatus },
-      ]);
+      xata.db.Assets.update({ id, status: newStatus }),
+        setAssets((prevState) => [
+          ...prevState.filter((asset) => asset.name !== selectedCard.name),
+          { ...selectedCard, status: newStatus },
+        ]);
       setSelectedCard(null);
     }
   };

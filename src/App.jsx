@@ -18,15 +18,17 @@ function App() {
     setSelectedCard(currentCardName);
   };
   const moveCard = (newStatus) => {
-    const { id } = selectedCard;
-    if (selectedCard) {
-      xata.db.Assets.update({ id, status: newStatus }),
-        setAssets((prevState) => [
-          ...prevState.filter((asset) => asset.name !== selectedCard.name),
-          { ...selectedCard, status: newStatus },
-        ]);
-      setSelectedCard(null);
-    }
+    try {
+      const { id } = selectedCard;
+      if (selectedCard) {
+        xata.db.Assets.update({ id, status: newStatus }),
+          setAssets((prevState) => [
+            ...prevState.filter((asset) => asset.name !== selectedCard.name),
+            { ...selectedCard, status: newStatus },
+          ]);
+        setSelectedCard(null);
+      }
+    } catch (e) {}
   };
   const assetsIn = assets.filter(
     (asset) => asset.status.toLowerCase() === "in"

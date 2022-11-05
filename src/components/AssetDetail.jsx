@@ -30,7 +30,10 @@ function AssetDetail({ asset, deleteAsset, onClick }) {
       </select>
       <i
         className="fa-solid fa-trash"
-        onClick={() => deleteAsset(asset.name, asset.id)}
+        onClick={(e) => {
+          deleteAsset(asset.name, asset.id);
+          e.stopPropagation();
+        }}
       />
     </p>
   );

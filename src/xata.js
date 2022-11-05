@@ -5,26 +5,6 @@ import { API_KEY } from "./.secrets";
 /** @type { SchemaTables } */
 const tables = [
   {
-    name: "Users",
-    columns: [
-      { name: "name", type: "string" },
-      { name: "email", type: "email" },
-      { name: "bio", type: "text" },
-    ],
-  },
-  {
-    name: "Posts",
-    columns: [
-      { name: "title", type: "string" },
-      { name: "labels", type: "multiple" },
-      { name: "slug", type: "string" },
-      { name: "text", type: "text" },
-      { name: "author", type: "link", link: { table: "Users" } },
-      { name: "createdAt", type: "datetime" },
-      { name: "views", type: "int" },
-    ],
-  },
-  {
     name: "Assets",
     columns: [
       { name: "name", type: "string", unique: true },

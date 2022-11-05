@@ -5,16 +5,27 @@ import AssetList from "./components/AssetList";
 
 export const xata = getXataClient();
 
-const records = await xata.db.Assets.getAll();
-console.log(records);
 function App() {
   const [assets, setAssets] = useState([]);
+  const [selectedCard, setSelectedCard] = useState(null);
   useEffect(() => {
     (async () => {
       const data = await xata.db.Assets.getAll();
       setAssets(data);
     })();
   }, []);
+  const handleCardSelect = (currentCardName) => {
+    setSelectedCard(currentCardName);
+  };
+  const moveCard = (newStatus) => {
+    if (selectedCard) {
+      setAssets((prevState) => [
+        ...prevState.filter((asset) => asset.name !== selectedCard.name),
+        { ...selectedCard, status: newStatus },
+      ]);
+      setSelectedCard(null);
+    }
+  };
   const assetsIn = assets.filter(
     (asset) => asset.status.toLowerCase() === "in"
   );
@@ -26,7 +37,7 @@ function App() {
   );
   return (
     <div className="index">
-      <nav className="header">Hello Three</nav>
+      <nav className="header">FPL Assets</nav>
       <div className="board">
         <span>
           <h3>In</h3>
@@ -35,6 +46,8 @@ function App() {
             allAssets={assets}
             status="In"
             updateAsset={setAssets}
+            selectAssetCardOnClick={handleCardSelect}
+            moveCard={moveCard}
           />
         </span>
         <span>
@@ -43,7 +56,9 @@ function App() {
             assets={assetsWatch}
             allAssets={assets}
             status="Watch"
+            selectAssetCardOnClick={handleCardSelect}
             updateAsset={setAssets}
+            moveCard={moveCard}
           />
         </span>
         <span>
@@ -53,6 +68,8 @@ function App() {
             allAssets={assets}
             status="Out"
             updateAsset={setAssets}
+            selectAssetCardOnClick={handleCardSelect}
+            moveCard={moveCard}
           />
         </span>
       </div>

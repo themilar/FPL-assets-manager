@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { xata } from "../App";
 
-function AssetDetail({ asset, deleteAsset }) {
+function AssetDetail({ asset, deleteAsset, onClick }) {
   const optionsAvailable = ["fit", "injured", "suspended"];
   const [availability, setAvailability] = useState(asset.availability);
   const { id } = asset;
@@ -11,7 +11,7 @@ function AssetDetail({ asset, deleteAsset }) {
     setAvailability(availability);
   };
   return (
-    <p className="asset-card" key={asset.id}>
+    <p className="asset-card" key={asset.id} onClick={() => onClick(asset)}>
       <span>{asset.name}</span>{" "}
       <select
         name="availability"

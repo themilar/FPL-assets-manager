@@ -4,25 +4,36 @@ import { xata } from "../App";
 import AddAssetForm from "./AddAssetForm";
 import AssetDetail from "./AssetDetail";
 
-export default function AssetList({ assets, status, updateAsset, allAssets }) {
+export default function AssetList({
+  assets,
+  status,
+  updateAsset,
+  allAssets,
+  selectAssetCardOnClick,
+  moveCard,
+}) {
   const [showForm, setShowForm] = useState(false);
+
   const updateAssetsDisplayed = (newAsset) => {
     updateAsset(allAssets.concat(newAsset));
   };
   const handleClick = () => {
     setShowForm(!showForm);
   };
+
   const deleteAsset = (assetName, assetID) => {
     xata.db.Assets.delete(assetID);
     updateAsset(allAssets.filter((asset) => asset.name !== assetName));
   };
   return (
-    <div className="assets">
+    <div className="assets" onClick={() => moveCard(status)}>
       {assets.map((asset) => (
         <AssetDetail
           asset={asset}
           allAssets={allAssets}
           deleteAsset={deleteAsset}
+          onClick={selectAssetCardOnClick}
+          key={asset.id}
         />
       ))}
       {assets.length < 11 ? (

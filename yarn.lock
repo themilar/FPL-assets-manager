@@ -247,6 +247,39 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@cloudinary/html@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/html/-/html-1.5.0.tgz#fac03954f99be84eddb2faf04895809171d87292"
+  integrity sha512-D9ozpUghSM2vbR6xhJ50jSFkICVd5vSwYHhTUdd3e2dAA+aUzwCeJraM5o5j4QSqzwfEoZTXhCNYYjFTnbNgYA==
+  dependencies:
+    "@types/lodash.clonedeep" "^4.5.6"
+    "@types/lodash.debounce" "^4.0.6"
+    "@types/node" "^14.14.10"
+    lodash.clonedeep "^4.5.0"
+    lodash.debounce "^4.0.8"
+    typescript "^4.1.2"
+
+"@cloudinary/react@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/react/-/react-1.5.0.tgz#af1352a31d606f2d9fca1826273c3754682f58ca"
+  integrity sha512-yXbAC+5MoJDwFj7s5gHbNVstBmmrgiKSNenBLrC6nNu4CtkfeD3n0SReigwuTPUp5HpHtXYiuLpiOPxV3+38tg==
+  dependencies:
+    "@cloudinary/html" "^1.5.0"
+
+"@cloudinary/transformation-builder-sdk@^1.0.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.1.0.tgz#57913951fd110a10904a2ef573784a6afd8a89a9"
+  integrity sha512-BqhTqIwPTyQ4hE0NjKXf/bF7VAjwe2ZHNuypdG6oQ6bDoiLTOSzdAZsg0jFndureQiVPavBKOzQTjHImp45z/g==
+  dependencies:
+    "@cloudinary/url-gen" "^1.7.0"
+
+"@cloudinary/url-gen@^1.7.0", "@cloudinary/url-gen@^1.8.6":
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.8.6.tgz#5d28c6957c01f3237230181387c818394ff30aab"
+  integrity sha512-BZUHOns1+ECmZTGlcWWZ1mM7Fu5TsSWqbknGCVtmhgX2g82kwZa3W3LhICMu/xyPjuQmz8ykjXHAkRw5kRZf+w==
+  dependencies:
+    "@cloudinary/transformation-builder-sdk" "^1.0.0"
+
 "@esbuild/android-arm@0.15.13":
   version "0.15.13"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.15.13.tgz#ce11237a13ee76d5eae3908e47ba4ddd380af86a"
@@ -311,6 +344,30 @@
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@react-dnd/shallowequal/-/shallowequal-4.0.2.tgz#d1b4befa423f692fa4abf1c79209702e7d8ae4b4"
   integrity sha512-/RVXdLvJxLg4QKvMoM5WlwNR9ViO9z8B/qPcc+C0Sa/teJY7QG7kJ441DwzOjMYEY7GmU4dj5EcGHIkKZiQZCA==
+
+"@types/lodash.clonedeep@^4.5.6":
+  version "4.5.7"
+  resolved "https://registry.yarnpkg.com/@types/lodash.clonedeep/-/lodash.clonedeep-4.5.7.tgz#0e119f582ed6f9e6b373c04a644651763214f197"
+  integrity sha512-ccNqkPptFIXrpVqUECi60/DFxjNKsfoQxSQsgcBJCX/fuX1wgyQieojkcWH/KpE3xzLoWN/2k+ZeGqIN3paSvw==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash.debounce@^4.0.6":
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/@types/lodash.debounce/-/lodash.debounce-4.0.7.tgz#0285879defb7cdb156ae633cecd62d5680eded9f"
+  integrity sha512-X1T4wMZ+gT000M2/91SYj0d/7JfeNZ9PeeOldSNoE/lunLeQXKvkmIumI29IaKMotU/ln/McOIvgzZcQ/3TrSA==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.188"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.188.tgz#e4990c4c81f7c9b00c5ff8eae389c10f27980da5"
+  integrity sha512-zmEmF5OIM3rb7SbLCFYoQhO4dGt2FRM9AMkxvA3LaADOF1n8in/zGJlWji9fmafLoNyz+FoL6FE0SLtGIArD7w==
+
+"@types/node@^14.14.10":
+  version "14.18.33"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.33.tgz#8c29a0036771569662e4635790ffa9e057db379b"
+  integrity sha512-qelS/Ra6sacc4loe/3MSjXNL1dNQ/GjxNHVzuChwMfmk7HuycRLVQN2qNY3XahK+fZc5E2szqQSKUyAF0E+2bg==
 
 "@types/prop-types@*":
   version "15.7.5"
@@ -634,6 +691,16 @@ json5@^2.2.1:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
   integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+  integrity sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
+
 loose-envify@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -791,6 +858,11 @@ to-fast-properties@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"
   integrity sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==
+
+typescript@^4.1.2:
+  version "4.8.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.4.tgz#c464abca159669597be5f96b8943500b238e60e6"
+  integrity sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==
 
 update-browserslist-db@^1.0.9:
   version "1.0.10"

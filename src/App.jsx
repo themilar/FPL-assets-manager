@@ -2,12 +2,23 @@ import { useEffect, useState } from "react";
 import { getXataClient } from "./xata";
 import "./App.css";
 import AssetList from "./components/AssetList";
-
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage } from "@cloudinary/react";
+import { fill } from "@cloudinary/url-gen/actions/resize";
+import { CLOUD_NAME } from "./.secrets";
 export const xata = getXataClient();
 
 function App() {
   const [assets, setAssets] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: CLOUD_NAME,
+    },
+  });
+  const Image = cld
+    .image("FPL-2223-EDITORIAL-STATEMENT_2_kd8sgw.png")
+    .resize(fill().width(200).height(50));
   useEffect(() => {
     (async () => {
       const data = await xata.db.Assets.getAll();
@@ -41,7 +52,14 @@ function App() {
   );
   return (
     <div className="index">
-      <nav className="header">FPL Assets</nav>
+      <header className="header">
+        <span>
+          <AdvancedImage cldImg={Image} />
+        </span>
+        <span>
+          <h2>Assets</h2>
+        </span>
+      </header>
       <div className="board">
         <span>
           <h3>In</h3>
@@ -77,7 +95,7 @@ function App() {
           />
         </span>
       </div>
-      <footer>and some bottom stuff</footer>
+      <footer>Submitted by</footer>
     </div>
   );
 }

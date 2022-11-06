@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.header {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
 .index {
   display: grid;
   height: 100vh;
